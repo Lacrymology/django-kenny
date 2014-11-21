@@ -15,7 +15,7 @@ setup(
     version = __version__,
     author = "Tomas Neme",
     author_email = "lacrymology@gmail.com",
-    description = ("An extremely simple TemplateView for django"),
+    description = ("An extremely simple dynamic TemplateView for django"),
     license = "MIT",
     keywords = "django generic-views",
     url = "https://github.com/Lacrymology/django-kenny",
