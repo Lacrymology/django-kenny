@@ -1,3 +1,5 @@
+# Overview 
+
 An extremely simple django app that renders templates based on URL path.
 
 Kenny provides a single view, `SongBirdView` which takes the path url kwarg
@@ -19,3 +21,11 @@ urlpatterns += (
 
 This way, if you go to `localhost:8000/mockup/foo/`, your `mockup/foo.html`
 template will be served.
+
+# Installation
+
+As easy as
+
+```
+pip install django-kenny
+```
