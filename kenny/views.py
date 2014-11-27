@@ -1,6 +1,8 @@
 import os
 from django.views.generic import TemplateView
 from django.http import Http404
+from django.template import TemplateDoesNotExist
+from django.template.loader import get_template
 
 # Create your views here.
 class SongBirdView(TemplateView):
@@ -8,6 +10,9 @@ class SongBirdView(TemplateView):
     def get_template_names(self):
         path = "{}.html".format(
             self.kwargs['path'].rstrip('/') or 'index')
-        if not os.path.exists(path):
+        path = os.path.join(self.prefix, path).replace(os.path.sep, "/")
+        try:
+            get_template(path)
+            return [path]
+        except TemplateDoesNotExist:
             raise Http404
-        return [os.path.join(self.prefix, path + ".html")]
